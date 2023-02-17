@@ -2,3 +2,4 @@
 
 export(Plot_imports)
 export(Plot_live_imports)
+export(map_GBIF_locs)
