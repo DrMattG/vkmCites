@@ -2,7 +2,7 @@
 #'
 #' @param Taxon Species name
 #' @param importer Country of import (defaults to "NO" - Norway)
-#'
+#' @param min_year A year filter default is >2009 (so start year is 2010)
 #' @return Visnetwork graph of origin, export and import of live and derived products of pythons
 #' @export
 #'
@@ -10,8 +10,9 @@
 #' plot_python_trade_network(Taxon="Python bivittatus")
 #' plot_python_trade_network(Taxon="Morelia bredli")
 
-
-plot_python_trade_network<-function(Taxon, importer="NO"){
+# Add a date range option
+# Add in option for all trades
+plot_python_trade_network<-function(Taxon, importer="NO",min_year=2009){
   dat=vkmCites::Pythons |>
     dplyr::mutate(Term2=dplyr::case_when(
       Term=="live"~"live",
@@ -21,6 +22,7 @@ plot_python_trade_network<-function(Taxon, importer="NO"){
     dplyr::filter(Taxon=={{Taxon}}) |>
     dplyr::filter(Importer=={{importer}}) |>
     dplyr::mutate(Term=Term2) |>
+    dplyr::filter(Year>{{min_year}}) |>
     dplyr::group_by(Year, Term, Origin, Exporter,Importer) |>
     dplyr::tally()
   if(dim(dat)[1]<1) stop("Not enough data for your chosen taxon")
@@ -31,7 +33,6 @@ plot_python_trade_network<-function(Taxon, importer="NO"){
   target = dplyr::tibble("Target"=c(dat$Exporter,dat$Importer))
   value =  dplyr::tibble("Value"=c(dat$n, dat$n))
 
-  library(igraph)
   node_label1<-unique(dat$Origin)
   node_label2<-unique(dat$Exporter)
   node_label3<-unique(dat$Importer)
@@ -84,8 +85,4 @@ plot_python_trade_network<-function(Taxon, importer="NO"){
 
 }
 
-
-plot_python_trade_network(Taxon="Python bivittatus")
-plot_python_trade_network(Taxon="Morelia bredli")
-plot_python_trade_network(Taxon="Python kyaiktiyo")
 

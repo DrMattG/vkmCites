@@ -4,7 +4,7 @@
 \alias{Plot_imports}
 \title{Plot the number of imports by Term}
 \usage{
-Plot_imports(data, Species, fullTerms = TRUE)
+Plot_imports(data, Species, fullTerms = FALSE, min_year = 2009)
 }
 \arguments{
 \item{data}{The dataset to use (needs to be an export from the CITES database)}
@@ -12,6 +12,8 @@ Plot_imports(data, Species, fullTerms = TRUE)
 \item{Species}{The species name e.g. "Python bivittatus"}
 
 \item{fullTerms}{TRUE or FALSE - plot all categories or use a simplified set of terms ("live" and "parts or product")}
+
+\item{min_year}{A year filter default is >2009 (so start year is 2010)}
 }
 \value{
 ggplot of the number of imports in the database

@@ -3,7 +3,7 @@
 #' @param data The dataset to use (needs to be an export from the CITES database)
 #' @param Species The species name e.g. "Python bivittatus"
 #' @param fullTerms TRUE or FALSE - plot all categories or use a simplified set of terms ("live" and "parts or product")
-#'
+#' @param min_year A year filter default is >2009 (so start year is 2010)
 #' @return ggplot of the number of imports in the database
 #' @export
 #'
@@ -12,7 +12,7 @@
 #' Plot_imports(data=vkmCites::Pythons , Species="Morelia bredli", fullTerms = FALSE)
 
 
-Plot_imports<-function(data,Species, fullTerms=TRUE){
+Plot_imports<-function(data,Species, fullTerms=FALSE, min_year=2009){
 
   if(fullTerms==FALSE){
     data |>
@@ -23,6 +23,7 @@ Plot_imports<-function(data,Species, fullTerms=TRUE){
       ))|>
       dplyr::filter(Taxon=={{Species}}) |>
       dplyr::mutate(Term=Term2) |>
+      dplyr::filter(Year>{{min_year}}) |>
       dplyr::group_by(Year, Term) |>
       dplyr::tally() |>
       ggplot2::ggplot(aes(Year, n, fill=Term))+
