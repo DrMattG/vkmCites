@@ -2,6 +2,7 @@
 # vkmCites
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/DrMattG/vkmCites/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DrMattG/vkmCites/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of vkmCites is to produce plots from CITES Trade Database for Non-Detriment Findings (NDFs) and reports. 
