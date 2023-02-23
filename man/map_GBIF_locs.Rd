@@ -16,6 +16,8 @@ ggplot map of species location records (can include non-native records)
 Map the locations of the species using GBIF data
 }
 \examples{
+\dontrun{
 map_GBIF_locs(Species="Morelia amethistina")
+}
 
 }

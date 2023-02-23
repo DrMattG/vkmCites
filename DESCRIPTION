@@ -11,6 +11,14 @@ Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 2.10)
+Imports: 
+    dplyr,
+    ggplot2,
+    red,
+    rlang,
+    rnaturalearth,
+    viridis,
+    visNetwork
 RoxygenNote: 7.2.3
 URL: https://github.com/DrMattG/vkmCites
 BugReports: https://github.com/DrMattG/vkmCites/issues

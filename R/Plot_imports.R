@@ -4,6 +4,7 @@
 #' @param Species The species name e.g. "Python bivittatus"
 #' @param fullTerms TRUE or FALSE - plot all categories or use a simplified set of terms ("live" and "parts or product")
 #' @param min_year A year filter default is >2009 (so start year is 2010)
+#' @importFrom rlang .data
 #' @return ggplot of the number of imports in the database
 #' @export
 #'
@@ -16,17 +17,17 @@ Plot_imports<-function(data,Species, fullTerms=FALSE, min_year=2009){
 
   if(fullTerms==FALSE){
     data |>
-      dplyr::mutate(Term2=case_when(
-        Term=="live"~"live",
-        Term=="eggs (live)"~"live",
+      dplyr::mutate(Term2 = dplyr::case_when(
+        .data$Term=="live"~"live",
+        .data$Term=="eggs (live)"~"live",
         TRUE~"parts or product"
       ))|>
-      dplyr::filter(Taxon=={{Species}}) |>
-      dplyr::mutate(Term=Term2) |>
-      dplyr::filter(Year>{{min_year}}) |>
-      dplyr::group_by(Year, Term) |>
+      dplyr::filter(.data$Taxon=={{Species}}) |>
+      dplyr::mutate(Term=.data$Term2) |>
+      dplyr::filter(.data$Year>{{min_year}}) |>
+      dplyr::group_by(.data$Year, .data$Term) |>
       dplyr::tally() |>
-      ggplot2::ggplot(aes(Year, n, fill=Term))+
+      ggplot2::ggplot(ggplot2::aes(.data$Year, .data$n, fill=.data$Term))+
       ggplot2::geom_histogram(stat="identity")+
       ggplot2::labs(y="The number of imports")+
       viridis::scale_fill_viridis(discrete=T)+
@@ -35,10 +36,10 @@ Plot_imports<-function(data,Species, fullTerms=FALSE, min_year=2009){
 
   }else{
     data |>
-      dplyr::filter(Taxon=={{Species}}) |>
-      dplyr::group_by(Year, Term) |>
+      dplyr::filter(.data$Taxon=={{Species}}) |>
+      dplyr::group_by(.data$Year, .data$Term) |>
       dplyr::tally() |>
-      ggplot2::ggplot(aes(Year, n, fill=Term))+
+      ggplot2::ggplot(ggplot2::aes(.data$Year, .data$n, fill=.data$Term))+
       ggplot2::geom_histogram(stat="identity")+
       ggplot2::labs(y="The number of imports")+
       viridis::scale_fill_viridis(discrete=T)+

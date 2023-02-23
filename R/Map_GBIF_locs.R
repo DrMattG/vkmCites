@@ -6,7 +6,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' map_GBIF_locs(Species="Morelia amethistina")
+#' }
 #'
 map_GBIF_locs<-function(Species){
   recs<-red::records(Species)
@@ -15,7 +17,7 @@ map_GBIF_locs<-function(Species){
   world <- rnaturalearth::ne_countries(scale = "medium", returnclass = "sf")
   p=ggplot2::ggplot(data = world) +
     ggplot2::geom_sf(color = "black", fill = "grey") +
-    ggplot2::geom_point(data = recs, ggplot2::aes(x = long, y = lat), colour="darkred") +
+    ggplot2::geom_point(data = recs, ggplot2::aes(x = .data$long, y = .data$lat), colour="darkred") +
     ggplot2::theme(plot.margin=grid::unit(c(0,0,0,0), "mm")) +
     ggplot2::xlab('Longitude') +
     ggplot2::ylab('Latitude')+
