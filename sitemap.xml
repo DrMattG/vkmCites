@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/404.html</loc>
+  </url>
+  <url>
+    <loc>/authors.html</loc>
+  </url>
+  <url>
+    <loc>/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Plot_imports.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Plot_live_imports.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Purpose_codes.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Pythons.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Source_codes.html</loc>
+  </url>
+  <url>
+    <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/map_GBIF_locs.html</loc>
+  </url>
+  <url>
+    <loc>/reference/plot_python_trade_network.html</loc>
+  </url>
+</urlset>
