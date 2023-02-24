@@ -15,7 +15,10 @@
 # Add in option for all trades
 plot_python_trade_network<-function(Taxon, importer="NO",min_year=2009){
 
-  dat<-NULL
+  dat<-id<-from_id<-to_id<-label.x<-
+    color.background.x<-from<-to<-
+    color.background<-label<-color<-width<-
+    NULL
 
    dat=vkmCites::Pythons |>
     dplyr::mutate(Term2=dplyr::case_when(
@@ -57,17 +60,15 @@ plot_python_trade_network<-function(Taxon, importer="NO",min_year=2009){
 
   edges=edges |>
     dplyr::left_join(nodes,by=c("from"="node")) |>
-    dplyr::mutate(from_id=edges$id) |>
-    dplyr::select(-edges$id)
+    dplyr::mutate(from_id=id)
 
   edges=edges |>
     dplyr::left_join(nodes,by=c("to"="node")) |>
-    dplyr::mutate(to_id=edges$id) |>
-    dplyr::select(-edges$id)
+    dplyr::mutate(to_id=edges$id)
 
   edges=edges |>
-    dplyr::mutate(from=edges$from_id,
-                  to=edges$to_id)
+    dplyr::mutate(from=from_id,
+                  to=to_id)
 
   edges =edges |>
     dplyr::mutate(color=dplyr::case_when(type=="live"~ "#FF0000",
@@ -75,6 +76,12 @@ plot_python_trade_network<-function(Taxon, importer="NO",min_year=2009){
 
   edges=edges |>
     dplyr::mutate(width=value)
+
+  edges<-edges |>
+    dplyr::mutate(label=label.x,
+                  color.background=color.background.x) |>
+    dplyr::select(c(from, to,type, value,color.background,
+             label, color, width))
 
   # edges=edges |>
   #   mutate(label= type)

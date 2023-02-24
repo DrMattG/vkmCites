@@ -1,12 +1,13 @@
 Package: vkmCites
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Package for plotting data from CITES World Trade Database
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: 
+    c(person(given="Matt", family= "Grainger", email= "matthewjamesgrainger@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-8426-6495")),
+           person(given="Sagnik",family="Sengupta", email= "sagnik.sengupta@fhi.no", role="aut"))
+Description: It takes a dataset downloaded from CITES and then makes standardised plots showing trends in trade for a specific taxon
+License: AGPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Depends: 
