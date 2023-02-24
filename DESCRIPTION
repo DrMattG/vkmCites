@@ -6,7 +6,7 @@ Authors@R:
     c(person(given="Matt", family= "Grainger", email= "matthewjamesgrainger@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-8426-6495")),
            person(given="Sagnik",family="Sengupta", email= "sagnik.sengupta@fhi.no", role="aut"))
-Description: It takes a dataset downloaded from CITES and then makes standardised plots showing trends in trade for a specific taxon
+Description: It takes a dataset downloaded from CITES and then makes standardised plots showing trends in trade for a specific taxon. Data for pythons is contained in the package. 
 License: AGPL (>= 3)
 Encoding: UTF-8
 LazyData: true
