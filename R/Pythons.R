@@ -1,6 +1,6 @@
 #' @title Pythons
-#' @description Downloaded (2023.02.16) Pythons trade data from the CITES Trade database.
-#' @format A data frame with 1697301 rows and 20 variables:
+#' @description Downloaded (2023.02.16) Pythons trade data from the CITES Trade database (year>1999).
+#' @format A data frame with 1527205 rows and 20 variables:
 #' \describe{
 #'   \item{\code{Id}}{double Globally Unique Identifer for each import record}
 #'   \item{\code{Year}}{integer Year of import}
