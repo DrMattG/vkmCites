@@ -1,0 +1,47 @@
+---
+title: "python_trade_network"
+output:
+  html_document: default
+  pdf_document: default
+date: "2023-03-01"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Description
+
+##List of species
+```{r}
+library(vkmCites)
+library(tidyverse)
+library(ggplot2)
+unique(vkmCites::Pythons$Taxon)
+```
+
+##Plots
+Species that showed the error message "Not enough daa for network" have been silenced
+```{r}
+library(visNetwork)
+#plot_python_trade_network(Taxon = "Apodora papuana", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Aspidites melanocephalus", importer = "NO", min_year = 2010)
+#plot_python_trade_network(Taxon = "Liasis mackloti", importer = "NO", min_year = 2010)
+#plot_python_trade_network(Taxon = "Morelia boeleni", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Morelia bredli", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Morelia spilota", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Morelia viridis", importer = "NO", min_year = 2010)
+#plot_python_trade_network(Taxon = "Python anchietae", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Python bivittatus", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Python breitensteini", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Python brongersmai", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Python curtus", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Python molurus", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Python regius", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Python reticulatus", importer = "NO", min_year = 2010)
+plot_python_trade_network(Taxon = "Python sebae", importer = "NO", min_year = 2010)
+#plot_python_trade_network(Taxon = "Python timoriensis", importer = "NO", min_year = 2010)
+#plot_python_trade_network(Taxon = "Python molurus molurus", importer = "NO", min_year = 2010)
+```
+```
+

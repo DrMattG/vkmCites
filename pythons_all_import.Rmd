@@ -1,0 +1,78 @@
+---
+title: 'All python imports: Terms classified into live and products'
+output:
+  word_document: default
+  html_document: default
+date: "2023-03-01"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Description
+The aim is to plot bar plots for data on all imports. The total imports (global) have been categorized into live (CITES database: Term = "live" and "eggs (live)") or products (CITES database: everything besides those included in "live")
+
+
+##List of species
+```{r}
+library(vkmCites)
+library(ggplot2)
+library(tidyverse)
+unique(vkmCites::Pythons$Taxon)
+```
+#List of "Terms"
+What to do with the meaningless products - frog legs or ivory carvings for example.
+```{r}
+unique(vkmCites::Pythons$Term)
+```
+
+
+
+##Plots
+```{r}
+library(viridis)
+Plot_imports(data = vkmCites::Pythons, Species = "Apodora papuana", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Aspidites melanocephalus", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Liasis mackloti", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Morelia boeleni", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Morelia bredli", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Morelia spilota", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Morelia viridis", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Python anchietae", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Python bivittatus", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Python breitensteini", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Python brongersmai", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Python curtus", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Python molurus molurus", min_year = 2009)
+#Plot_live_imports(data = vkmCites::Pythons, Species = "Python  molurus", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Python regius", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Python reticulatus", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Python sebae", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Python timoriensis", min_year = 2009)
+Plot_imports(data = vkmCites::Pythons, Species = "Python  molurus", min_year = 2009)
+```
+
+Added figure title
+```{r}
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Apodora papuana", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Aspidites melanocephalus", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Liasis mackloti", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Morelia boeleni", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Morelia bredli", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Morelia spilota", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Morelia viridis", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Python anchietae", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Python bivittatus", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Python breitensteini", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Python brongersmai", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Python curtus", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Python molurus molurus", min_year = 2009)
+#Plot_live_imports(data = vkmCites::Pythons, Species = "Python  molurus", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Python regius", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Python reticulatus", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Python sebae", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Python timoriensis", min_year = 2009)
+Plot_imports_tc(data = vkmCites::Pythons, Species = "Python  molurus", min_year = 2009)
+```
+

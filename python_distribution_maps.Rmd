@@ -1,0 +1,48 @@
+---
+title: "Distribution maps"
+output: html_document
+date: "2023-03-01"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Description
+Refer to python_live_import.Rmd
+
+##List of species
+```{r}
+library(vkmCites)
+library(ggplot2)
+unique(vkmCites::Pythons$Taxon)
+```
+
+## Plots
+```{r}
+library(red)
+library(rnaturalearth)
+map_GBIF_locs(Species = "Apodora papuana")
+map_GBIF_locs(Species = "Aspidites melanocephalus")
+map_GBIF_locs(Species = "Liasis mackloti")
+map_GBIF_locs(Species = "Morelia boeleni")
+map_GBIF_locs(Species = "Morelia bredli")
+map_GBIF_locs(Species = "Morelia spilota")
+map_GBIF_locs(Species = "Morelia viridis")
+map_GBIF_locs(Species = "Python anchietae")
+map_GBIF_locs(Species = "Python bivittatus")
+map_GBIF_locs(Species = "Python breitensteini")
+map_GBIF_locs(Species = "Python brongersmai")
+map_GBIF_locs(Species = "Python curtus")
+map_GBIF_locs(Species = "Python molurus")
+map_GBIF_locs(Species = "Python regius")
+map_GBIF_locs(Species = "Python reticulatus")
+map_GBIF_locs(Species = "Python sebae")
+#map_GBIF_locs(Species = "Python timoriensis")
+map_GBIF_locs(Species = "Python molurus molurus")
+```
+#Errors
+```{r}
+#map_GBIF_locs(Species = "Python timoriensis")
+```
+

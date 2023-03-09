@@ -1,0 +1,152 @@
+---
+title: "Pythons data"
+output:
+  word_document: default
+  html_document: default
+date: "2023-03-02"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# CITES trade data on pythons
+The data has been downloaded from CITES trade database.This is how the data looks like.
+```{r}
+library(vkmCites)
+library(tidyverse)
+#library(ggplot2)
+
+#head(vkmCites::Pythons)
+```
+## Parameters included in the dataset
+Here, one can see the column names (parameters recorded in the CITES database). 
+```{r}
+names(vkmCites::Pythons)
+```
+### Explanation of the column names:
+id: Unique trade id for each instance of trade.
+
+Year: Year in which the trade was recorded.
+
+Appendix: CITES Appendix to which the traded species belongs.
+
+Taxon: Taxonomic name
+
+Class, Order, Family, Genus: Taxonomic hierarchy of the species traded.
+
+Term: live animal, skin, skeleton, organs etc. (descriptions)
+
+Quantity: Importer-reported trade
+
+Unit:
+
+Importer: Country importing (Two-letter ISO codes)
+
+Exporter: Country exporting (Two-letter ISO codes)
+
+Origin: Country of origin (Two-letter ISO codes)
+
+Purpose: Reason why the trade was conducted (single-letter codes)
+
+Source: Wild-caught, captive-bred, siezed items etc. (single-letter code)
+
+Reporter.type:
+
+Import.permit.RandomID:
+
+Export.permit.RandomID:
+
+Origin.permit.RandomID
+
+## Issues
+### Year
+```{r}
+range(vkmCites::Pythons$Year)
+```
+The data from 1975 to 2021 has been downloaded fom the CITES database.
+
+#### Issue 1: Use the entire time line for looking at time trends in trade?
+#### Issue 2: Sagnik has tabulated trade data from 2010 to 2022. Do we need to show any such tables in the report? We can possibly re-prepare the tables using codes prepared by Matthew to make the tables more readable and consistent with the data used for the plots included in the report.
+
+### Species
+Alphabetical list of unique species imported and exported into/out of Norway.
+
+Since 2010: 16 unique species.
+
+#### Issue 3: Should have been 17 species. Why does the missing species, \i Python anchietae \i, not show up in this list? It has been imported into Norway in 2021 (as seen from the data manually downloaded from the CITES trade database) but it has not been exported.
+
+#### Issue 4: It has been agreed that we will look at the trade data of these 17 species, right? 
+```{r}
+Impo <- vkmCites::Pythons |>
+  dplyr::filter(Year > 2009, Importer =="NO") |>
+  distinct(Taxon)
+
+Expo <- vkmCites::Pythons |> 
+  dplyr::filter(Year > 2009, Exporter =="NO")  |>
+  distinct(Taxon)
+
+sp_2010 <- unique(rbind(Impo, Expo)) |> arrange(Taxon)
+sp_2010
+```
+
+Since 1975
+```{r}
+
+Impo_1975 <- vkmCites::Pythons |>
+  dplyr::filter(Importer =="NO") |>
+  distinct(Taxon)
+
+Expo_1975 <- vkmCites::Pythons |> 
+  dplyr::filter(Exporter =="NO")  |>
+  distinct(Taxon)
+
+sp_1975 <- unique(rbind(Impo_1975, Expo_1975)) |> arrange(Taxon)
+sp_1975
+
+```
+#### Issue 5: Only the importer-reported quantities have been used in vkmCites package. In general, it seems o to use this and ignore the exported-reported quantities because the latter are generally lesser than the importer-reported quantities, especially over the last few years. Any suggestions?
+
+### Importer, Exporter and origin
+Coding in the CITES database: Two-letter country codes, NA = Namibia, blank cells, XX = missing information, XV = various
+
+#### Issue 6: R reads NA as missing info. Change to NB before analysing the data?
+
+#### Issue 7: XX, XV and blank cells are equally (un)informative. Should we change them to the common code NA or a random number, e.g., 99, before analysis? The issue of blank cells applies to the other columns as well.
+
+### Source codes
+Source codes found in the python data and their interpretations
+```{r}
+vkmCites::Pythons |> 
+  distinct(Source)
+Source_codes
+```
+#### Issue 8: How to deal with the following codes? Should we merge some of them with C = captive-bred, W = wild-caught or I = confiscated/siezed,  or drop some of them altogether?
+
+D: Appendix-I animals bred in captivity for commercial purposes in operations included in the Secretariat's Register, in accordance with Resolution Conf. 12.10 (Rev.CoP15), and Appendix-I plants artificially propagated for commercial purposes, parts and derivatives thereof, exported under the provisions of Article VII, paragraph 4, of the Convention
+
+U: Source unknown
+
+X: Specimens taken in 'the marine environment not under the jurisdiction of any State'
+
+O: Pre-Convention specimens
+
+F: Animals born in captivity (F1 or subsequent generations) that do not fulfil the definition of ‘bred in captivity’ in Resolution Conf. 10.16 (Rev.), as well as parts and derivatives thereof.
+
+R: Ranched specimens: specimens of animals reared in a controlled environment, taken as eggs or juveniles from the wild, where they would otherwise have had a very low probability of surviving to adulthood
+
+Blandk cells:
+
+
+### Terms
+The list of terms traded is shown below
+```{r}
+vkmCites::Pythons |> 
+  distinct(Term)
+```
+### Issue 9: Merged "live" and "eggs (live)". Merged everything else into "products". Does this categorisation seems reasonable to everyone.?
+
+#### Issue 10: The following are examples of problematic categories: blank cells, frog leg, ivory carvings and unspecified. Should we mergethese into unspecified?
+
+
+
