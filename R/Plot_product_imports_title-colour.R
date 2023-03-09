@@ -28,7 +28,17 @@ Plot_product_imports_tc<-function(data,Species, min_year=2009){
     ggplot2::ggplot(aes(Year, n, fill=Source))+
     ggplot2::geom_histogram(stat="identity")+
     ggplot2::labs(y="Number of imports of parts and products")+
-    viridis::scale_fill_viridis(discrete=T)+
+    #viridis::scale_fill_viridis(discrete=T)+
+    ggplot2::scale_colour_manual(values=c("C" = "dodgerblue", 
+                                          "F" = "blue", "I" = "red", 
+                                          NULL = "black",
+                                          "U" = "grey", 
+                                          "R" = "orange", 
+                                          "O" = "lightgreen",
+                                          #  "Y" = "green4", 
+                                          # "X" = "darkblue", 
+                                          #"D" = "red3", "A"="brown"
+                                          "W" = "yellow"))+
     ggplot2::theme_classic()+
     ggplot2::ggtitle(paste0("Part and product imports for ", Species))
   }
