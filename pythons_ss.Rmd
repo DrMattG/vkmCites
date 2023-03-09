@@ -74,6 +74,7 @@ Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python reticulatus", m
 
 
 #Trying to get the plots in species-wise panels
+First figure: 3-panel histograms
 ```{r}
 library(gridExtra)
 pv_fig1a=grid.arrange(oo,aa,dd,ncol=3)
@@ -96,5 +97,19 @@ pret_fig1a
 ggsave("P.reticulatus_fig.1.pdf", pret_fig1a, width = 30, height = 8, units="cm")
 
 ggsave("P.reticulatus_fig.1.tiff", pret_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+```
+
+
+Second figure: Map and network side by side
+ggsave did not work for the network
+```{r}
+#pv_fig2a=grid.arrange(gg,jj,ncol=2)
+#pv_fig2a
+library(targets)
+library(webshot)
+widget <- tar_visnetwork()
+visSave(widget, "graph.html")
+webshot("graph.html", file = "graph.png")
+
 ```
 
