@@ -130,11 +130,63 @@ am_fig1a
 
 lm_fig1a=grid.arrange(lm_1, lm_2, lm_3, ncol=3)
 lm_fig1a
-ggsave("L.mackloti_fig.1.pdf", lm_fig1a, width = 30, height = 8, units="cm")
-ggsave("L.mackloti_fig.1.tiff", lm_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("L.mackloti_fig.1.pdf", lm_fig1a, width = 30, height = 8, units="cm")
+#ggsave("L.mackloti_fig.1.tiff", lm_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
 
+mb_fig1a=grid.arrange(mb_1, mb_2, mb_3, ncol=3)
+mb_fig1a
+#ggsave("M.boeleni_fig.1.pdf", mb_fig1a, width = 30, height = 8, units="cm")
+#ggsave("M.boeleni_fig.1.tiff", mb_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
 
+mbre_fig1a=grid.arrange(mbr_1, mbr_2, mbr_3, ncol=3)
+mbre_fig1a
+#ggsave("M.bredli_fig.1.pdf", mbre_fig1a, width = 30, height = 8, units="cm")
+#ggsave("M.bredli_fig.1.tiff", mbre_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
 
+ms_fig1a=grid.arrange(ms_1, ms_2, ms_3, ncol=3)
+ms_fig1a
+#ggsave("M.spilota_fig.1.pdf", ms_fig1a, width = 30, height = 8, units="cm")
+#ggsave("M.spilota_fig.1.tiff", ms_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+mv_fig1a=grid.arrange(mv_1, mv_2, mv_3, ncol=3)
+mv_fig1a
+#ggsave("M.viridis_fig.1.pdf", mv_fig1a, width = 30, height = 8, units="cm")
+#ggsave("M.viridis_fig.1.tiff", mv_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+pa_fig1a=grid.arrange(pa_1, pa_2, pa_3, ncol=3)
+pa_fig1a
+#ggsave("P.anchietae_fig.1.pdf", pa_fig1a, width = 30, height = 8, units="cm")
+#ggsave("P.anchietae_fig.1.tiff", pa_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+pbre_fig1a=grid.arrange(pbre_1, pbre_2, pbre_3, ncol=3)
+pbre_fig1a
+#ggsave("P.breitensteini_fig.1.pdf", pbre_fig1a, width = 30, height = 8, units="cm")
+#ggsave("P.breitensteini_fig.1.tiff", pbre_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+pbro_fig1a=grid.arrange(pbro_1, pbro_2, pbro_3, ncol=3)
+pbro_fig1a
+#ggsave("P.brongersmai_fig.1.pdf", pbro_fig1a, width = 30, height = 8, units="cm")
+#ggsave("P.brongersmai_fig.1.tiff", pbro_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+pc_fig1a=grid.arrange(pc_1, pc_2, pc_3, ncol=3)
+pc_fig1a
+#ggsave("P.curtus_fig.1.pdf", pc_fig1a, width = 30, height = 8, units="cm")
+#ggsave("P.curtus_fig.1.tiff", pc_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+pmm_fig1a=grid.arrange(pmm_1, pmm_2, pmm_3, ncol=3)
+pmm_fig1a
+#ggsave("P.molurus_fig.1.pdf", pmm_fig1a, width = 30, height = 8, units="cm")
+#ggsave("P.molurus_fig.1.tiff", pmm_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+ps_fig1a=grid.arrange(ps_1, ps_2, ps_3, ncol=3)
+ps_fig1a
+#ggsave("P.sebae_fig.1.pdf", ps_fig1a, width = 30, height = 8, units="cm")
+#ggsave("P.sebae_fig.1.tiff", ps_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+pt_fig1a=grid.arrange(pt_1, pt_2, pt_3, ncol=3)
+pt_fig1a
+#ggsave("P.timoriensis_fig.1.pdf", pt_fig1a, width = 30, height = 8, units="cm")
+#ggsave("P.timoriensis_fig.1.tiff", pt_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
 ```
 
 
