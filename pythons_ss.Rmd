@@ -65,14 +65,6 @@ mm=plot_python_trade_network_allsp(importer = "NO", min_year = 2010)
 nn=plot_python_trade_network_allsp(importer = "NO", min_year = 1975)
 ```
 
-#Trying to control th ecolours
-```{r}
-Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python bivittatus", min_year = 1975) 
-Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python regius", min_year = 1975)
-Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python reticulatus", min_year = 1975)
-```
-
-
 #Trying to get the plots in species-wise panels
 First figure: 3-panel histograms
 ```{r}

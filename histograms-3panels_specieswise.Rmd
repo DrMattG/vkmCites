@@ -1,0 +1,160 @@
+---
+title: "Histograms-3panels-17species"
+output: html_document
+date: "2023-03-09"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## R Markdown
+```{r}
+library(vkmCites)
+library(tidyverse)
+library(ggplot2)
+head(vkmCites::Pythons)
+names(vkmCites::Pythons)
+unique(vkmCites::Pythons$Taxon)
+unique(vkmCites::Pythons$Importer)
+unique(vkmCites::Pythons$Exporter)
+unique(vkmCites::Pythons$Origin)
+min(vkmCites::Pythons$Year)
+max(vkmCites::Pythons$Year)
+```
+##Total imports
+```{r}
+library(viridis)
+library(viridisLite)
+#Plot_imports(data=vkmCites::Pythons, Species="Python bivittatus", fullTerms = FALSE)
+
+oo=Plot_imports_tc(data=vkmCites::Pythons, Species="Python bivittatus", fullTerms = FALSE, min_year = 1975)
+pp=Plot_imports_tc(data=vkmCites::Pythons, Species="Python regius", fullTerms = FALSE, min_year = 1975)
+qq=Plot_imports_tc(data=vkmCites::Pythons, Species="Python reticulatus", fullTerms = FALSE, min_year = 1975)
+
+
+ap_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Apodora papuana", min_year = 1975)
+am_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Aspidites melanocephalus", min_year = 1975)
+lm_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Liasis mackloti", min_year = 1975)
+mb_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Morelia boeleni", min_year = 1975)
+mbr_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Morelia bredli", min_year = 1975)
+ms_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Morelia spilota", min_year = 1975)
+mv_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Morelia viridis", min_year = 1975)
+pa_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Python anchietae", min_year = 1975)
+pbre_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Python breitensteini", min_year = 1975)
+pbro_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Python brongersmai", min_year = 1975)
+pc_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Python curtus", min_year = 1975)
+pmm_1 =Plot_imports_tc(data = vkmCites::Pythons, Species = "Python molurus molurus", min_year = 1975)
+ps_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Python sebae", min_year = 1975)
+pt_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Python timoriensis", min_year = 1975)
+#pm_1 = Plot_imports_tc(data = vkmCites::Pythons, Species = "Python  molurus", min_year = 2009) #blank plot
+
+```
+##import of live animals and live eggs
+```{r}
+library(viridis)
+#Plot_live_imports(data = vkmCites::Pythons, Species = "Python bivittatus")
+
+aa=Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python bivittatus", min_year = 1975)
+bb=Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python regius", min_year = 1975)
+cc=Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python reticulatus", min_year = 1975)
+
+ap_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Apodora papuana", min_year = 1975)
+am_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Aspidites melanocephalus", min_year = 1975)
+lm_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Liasis mackloti", min_year = 1975)
+mb_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Morelia boeleni", min_year = 1975)
+mbr_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Morelia bredli", min_year = 1975)
+ms_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Morelia spilota", min_year = 1975)
+mv_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Morelia viridis", min_year = 1975)
+pa_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python anchietae", min_year = 1975)
+pbre_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python breitensteini", min_year = 1975)
+pbro_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python brongersmai", min_year = 1975)
+pc_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python curtus", min_year = 1975)
+pmm_2 =Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python molurus molurus", min_year = 1975)
+ps_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python sebae", min_year = 1975)
+pt_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python timoriensis", min_year = 1975)
+#pm_2 = Plot_live_imports_tc(data = vkmCites::Pythons, Species = "Python  molurus", min_year = 1975) #blank plot
+```
+##import of parts and products
+```{r}
+dd=Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Python bivittatus", min_year = 1975)
+ee=Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Python regius", min_year = 1975)
+ff=Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Python reticulatus", min_year = 1975)
+
+ap_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Apodora papuana", min_year = 1975)
+am_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Aspidites melanocephalus", min_year = 1975)
+lm_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Liasis mackloti", min_year = 1975)
+mb_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Morelia boeleni", min_year = 1975)
+mbr_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Morelia bredli", min_year = 1975)
+ms_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Morelia spilota", min_year = 1975)
+mv_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Morelia viridis", min_year = 1975)
+pa_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Python anchietae", min_year = 1975)
+pbre_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Python breitensteini", min_year = 1975)
+pbro_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Python brongersmai", min_year = 1975)
+pc_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Python curtus", min_year = 1975)
+pmm_3 =Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Python molurus molurus", min_year = 1975)
+ps_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Python sebae", min_year = 1975)
+pt_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Python timoriensis", min_year = 1975)
+#pm_3 = Plot_product_imports_tc(data = vkmCites::Pythons, Species = "Python  molurus", min_year = 1975) #blank plot
+```
+
+#Trying to get the plots in species-wise panels
+First figure: 3-panel histograms
+```{r}
+library(gridExtra)
+
+pv_fig1a=grid.arrange(oo,aa,dd,ncol=3)
+pv_fig1a
+#ggsave("P.bivittatus_fig.1.pdf", pv_fig1a, width = 30, height = 8, units="cm")
+#ggsave("P.bivittatus_fig.1.tiff", pv_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+pr_fig1a=grid.arrange(pp,bb,ee,ncol=3)
+pr_fig1a
+#ggsave("P.regius_fig.1.pdf", pr_fig1a, width = 30, height = 8, units="cm")
+#ggsave("P.regius_fig.1.tiff", pr_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+pret_fig1a=grid.arrange(qq,cc,ff,ncol=3)
+pret_fig1a
+#ggsave("P.reticulatus_fig.1.pdf", pret_fig1a, width = 30, height = 8, units="cm")
+#ggsave("P.reticulatus_fig.1.tiff", pret_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+
+ap_fig1a=grid.arrange(ap_1, ap_2, ap_3, ncol=3)
+ap_fig1a
+#ggsave("A.papuana_fig.1.pdf", ap_fig1a, width = 30, height = 8, units="cm")
+#ggsave("A.papuana_fig.1.tiff", ap_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+am_fig1a=grid.arrange(am_1, am_2, am_3, ncol=3)
+am_fig1a
+#ggsave("A.melanocephalus_fig.1.pdf", am_fig1a, width = 30, height = 8, units="cm")
+#ggsave("A.melanocephalus_fig.1.tiff", am_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+lm_fig1a=grid.arrange(lm_1, lm_2, lm_3, ncol=3)
+lm_fig1a
+ggsave("L.mackloti_fig.1.pdf", lm_fig1a, width = 30, height = 8, units="cm")
+ggsave("L.mackloti_fig.1.tiff", lm_fig1a, width = 30, height = 8, units="cm", dpi=500, compression="lzw")
+
+
+
+```
+
+
+
+##Distribution maps
+```{r}
+library(red)
+library(rnaturalearth)
+gg=map_GBIF_locs(Species = "Python bivittatus")
+hh=map_GBIF_locs(Species = "Python regius")
+ii=map_GBIF_locs(Species = "Python reticulatus")
+```
+##Trade networks
+```{r}
+library(visNetwork)
+jj=plot_python_trade_network(Taxon = "Python bivittatus", importer = "NO", min_year = 2010)
+kk=plot_python_trade_network(Taxon = "Python regius", importer = "NO", min_year = 2010)
+ll=plot_python_trade_network(Taxon = "Python reticulatus", importer = "NO", min_year = 2010)
+mm=plot_python_trade_network_allsp(importer = "NO", min_year = 2010)
+nn=plot_python_trade_network_allsp(importer = "NO", min_year = 1975)
+```
+
+
