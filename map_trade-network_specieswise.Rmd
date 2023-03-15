@@ -32,12 +32,28 @@ hh=map_GBIF_locs(Species = "Python regius")
 ii=map_GBIF_locs(Species = "Python reticulatus")
 ```
 ##Trade networks
+plot_python_trade_network_c: provides species-wise plots with Norway coloured yellow
+plot_python_trade_network_allsp: Plots all species together with Norway coloured yellow.
+
 ```{r}
 library(visNetwork)
-jj=plot_python_trade_network(Taxon = "Python bivittatus", importer = "NO", min_year = 2010)
-kk=plot_python_trade_network(Taxon = "Python regius", importer = "NO", min_year = 2010)
-ll=plot_python_trade_network(Taxon = "Python reticulatus", importer = "NO", min_year = 2010)
+jj=plot_python_trade_network_c(Taxon = "Python bivittatus", importer = "NO", min_year = 2010)
+kk=plot_python_trade_network_c(Taxon = "Python regius", importer = "NO", min_year = 2010)
+ll=plot_python_trade_network_c(Taxon = "Python reticulatus", importer = "NO", min_year = 2010)
 mm=plot_python_trade_network_allsp(importer = "NO", min_year = 2010)
 nn=plot_python_trade_network_allsp(importer = "NO", min_year = 1975)
+```
+
+
+```{r}
+#pv_fig2a=grid.arrange(gg,jj,ncol=2)
+#pv_fig2a
+library(targets)
+library(webshot) #webshot::install_phantomjs()
+
+#visSave(jj, "jj.html") works
+#visExport(kk, type="pdf", name = "kk" )
+#visExport(mm, type="pdf", name = "mm" )
+#visExport(nn, type="pdf", name = "nn" )
 ```
 
