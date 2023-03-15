@@ -191,22 +191,4 @@ pt_fig1a
 
 
 
-##Distribution maps
-```{r}
-library(red)
-library(rnaturalearth)
-gg=map_GBIF_locs(Species = "Python bivittatus")
-hh=map_GBIF_locs(Species = "Python regius")
-ii=map_GBIF_locs(Species = "Python reticulatus")
-```
-##Trade networks
-```{r}
-library(visNetwork)
-jj=plot_python_trade_network(Taxon = "Python bivittatus", importer = "NO", min_year = 2010)
-kk=plot_python_trade_network(Taxon = "Python regius", importer = "NO", min_year = 2010)
-ll=plot_python_trade_network(Taxon = "Python reticulatus", importer = "NO", min_year = 2010)
-mm=plot_python_trade_network_allsp(importer = "NO", min_year = 2010)
-nn=plot_python_trade_network_allsp(importer = "NO", min_year = 1975)
-```
-
 
