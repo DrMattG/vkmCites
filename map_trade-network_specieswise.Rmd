@@ -44,7 +44,7 @@ mm=plot_python_trade_network_allsp(importer = "NO", min_year = 2010)
 nn=plot_python_trade_network_allsp(importer = "NO", min_year = 1975)
 ```
 
-
+In the code below, the output appears below the chunk. draw the nodes to the desired positions and then click on "export as..." button which appears at the bottom right.
 ```{r}
 #pv_fig2a=grid.arrange(gg,jj,ncol=2)
 #pv_fig2a
@@ -55,5 +55,166 @@ library(webshot) #webshot::install_phantomjs()
 #visExport(kk, type="pdf", name = "kk" )
 #visExport(mm, type="pdf", name = "mm" )
 #visExport(nn, type="pdf", name = "nn" )
+```
+
+#preparing 2-panel figures of map and network
+```{r}
+library(gridExtra)
+pb_fig2a=grid.arrange(gg,jj,ncol=3)
+pv_fig2a
+
+par(nfrow=c(1,2))
+jj
+kk
+```
+
+#plotting the maps as pdfs
+```{r}
+library(red)
+library(rnaturalearth)
+map_ap = map_GBIF_locs(Species = "Apodora papuana")
+map_am = map_GBIF_locs(Species = "Aspidites melanocephalus")
+map_lm = map_GBIF_locs(Species = "Liasis mackloti")
+map_mb = map_GBIF_locs(Species = "Morelia boeleni")
+map_nbre = map_GBIF_locs(Species = "Morelia bredli")
+map_msp = map_GBIF_locs(Species = "Morelia spilota")
+map_mv = map_GBIF_locs(Species = "Morelia viridis")
+map_på = map_GBIF_locs(Species = "Python anchietae")
+map_pb = map_GBIF_locs(Species = "Python bivittatus")
+map_pbre = map_GBIF_locs(Species = "Python breitensteini")
+map_pbro = map_GBIF_locs(Species = "Python brongersmai")
+map_pc = map_GBIF_locs(Species = "Python curtus")
+map_pm = map_GBIF_locs(Species = "Python molurus")
+map_preg = map_GBIF_locs(Species = "Python regius")
+map_pret = map_GBIF_locs(Species = "Python reticulatus")
+map_ps = map_GBIF_locs(Species = "Python sebae")
+#map_GBIF_locs(Species = "Python timoriensis")
+#map_GBIF_locs(Species = "Python molurus molurus") #provides  the same map as P. molurus.
+```
+
+saving the maps as pdfs and tiffs
+```{r}
+ggsave("map_apodora_papuana.pdf", map_ap, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_apodora_papuana.tiff", map_ap, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_aspidites_melanocephalus.pdf", map_am, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_aspidites_melanocephalus.tiff", map_am, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_liasis_mackloti.pdf", map_lm, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_liasis_mackloti.tiff", map_lm, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_morelia_boeleni.pdf", map_mb, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_morelia_boeleni.tiff", map_mb, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_morelia_bredli.pdf", map_nbre, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_morelia_bredli.tiff", map_nbre, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_morelia_spilota.pdf", map_msp, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_morelia_spilota.tiff", map_msp, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_morelia_viridis.pdf", map_mv, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_morelia_viridis.tiff", map_mv, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_python_anchietae.pdf", map_på, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_python_anchietae.tiff", map_på, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_python_bivittatus.pdf", map_pb, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_python_bivittatus.tiff", map_pb, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_python_breitensteini.pdf", map_pbre, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_python_breitensteini.tiff", map_pbre, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_python_brongersmaii.pdf", map_pbro, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_python_brongersmai.tiff", map_pbro, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_python_curtus.pdf", map_pc, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_python_curtus.tiff", map_pc, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_python_molurus.pdf", map_pm, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_python_molurus.tiff", map_pm, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_python_regius.pdf", map_preg, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_python_regius.tiff", map_preg, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_python_reticulatus.pdf", map_pret, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_python_reticulatus.tiff", map_pret, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+ggsave("map_python_sebae.pdf", map_ps, width = 8, height = 8, units ="cm"  ) 
+ggsave("map_python_sebae.tiff", map_ps, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+
+
+#map_GBIF_locs(Species = "Python timoriensis")
+#map_GBIF_locs(Species = "Python molurus molurus") #provides  the same map as P. molurus.
+```
+
+#Plotting trade networks.
+```{r}
+library(visNetwork)
+#plot_python_trade_network(Taxon = "Apodora papuana", importer = "NO", min_year = 2010)
+tn_am =  plot_python_trade_network_c(Taxon = "Aspidites melanocephalus", importer = "NO", min_year = 2010)
+#plot_python_trade_network(Taxon = "Liasis mackloti", importer = "NO", min_year = 2010)
+#plot_python_trade_network(Taxon = "Morelia boeleni", importer = "NO", min_year = 2010)
+tn_mbre = plot_python_trade_network_c(Taxon = "Morelia bredli", importer = "NO", min_year = 2010)
+tn_ms = plot_python_trade_network_c(Taxon = "Morelia spilota", importer = "NO", min_year = 2010)
+tn_mv = plot_python_trade_network_c(Taxon = "Morelia viridis", importer = "NO", min_year = 2010)
+#plot_python_trade_network(Taxon = "Python anchietae", importer = "NO", min_year = 2010)
+tn_pbre = plot_python_trade_network_c(Taxon = "Python breitensteini", importer = "NO", min_year = 2010)
+tn_pbro = plot_python_trade_network_c(Taxon = "Python brongersmai", importer = "NO", min_year = 2010)
+tn_pc = plot_python_trade_network_c(Taxon = "Python curtus", importer = "NO", min_year = 2010)
+tn_pm = plot_python_trade_network_c(Taxon = "Python molurus", importer = "NO", min_year = 2010)
+tn_ps = plot_python_trade_network_c(Taxon = "Python sebae", importer = "NO", min_year = 2010)
+#plot_python_trade_network(Taxon = "Python timoriensis", importer = "NO", min_year = 2010)
+#plot_python_trade_network(Taxon = "Python molurus molurus", importer = "NO", min_year = 2010)
+tn_pb=plot_python_trade_network_c(Taxon = "Python bivittatus", importer = "NO", min_year = 2010)
+tn_preg=plot_python_trade_network_c(Taxon = "Python regius", importer = "NO", min_year = 2010)
+tn_pret=plot_python_trade_network_c(Taxon = "Python reticulatus", importer = "NO", min_year = 2010)
+
+#All taxa
+tn_no2010=plot_python_trade_network_allsp(importer = "NO", min_year = 2010)
+tn_no1975=plot_python_trade_network_allsp(importer = "NO", min_year = 1975)
+```
+Saving them as png as pdfs are not of high quality. Other possibilities: png, jpeg and html.
+
+Still not giving very good results. Simply print out the objects in the console and save as png.
+
+Then, plot continent-wise
+```{r}
+#visSave(tn_pb, "tn_python_bivittatus.html") #works
+#visExport(tn_pb, type="pdf", name = "tn_python_bivittatus" )
+
+visExport(tn_am, type="png", name = "tn_asplidites_melanocephalus")
+visExport(tn_mbre, type="png", name = "tn_morelia_bredli" )
+visExport(tn_ms, type="png", name = "tn_morelia_spilota" )
+visExport(tn_mv, type="png", name = "tn_morelia_viridis")
+visExport(tn_pbre, type="png", name = "tn_python_breitensteini")
+visExport(tn_pbro, type="png", name = "tn_python_brongersmai")
+visExport(tn_pc, type="png", name = "tn_python_curtus")
+visExport(tn_pm, type="png", name = "tn_python_molurus" )
+visExport(tn_ps, type="png", name = "tn_python_sebae" )
+visExport(tn_pb, type="png", name = "tn_python_bivittatus" )
+visExport(tn_preg, type="png", name = "tn_python_regius" )
+visExport(tn_pret, type="png", name = "tn_python_reticulatus")
+
+visExport(tn_no1975, type="png", name = "tn_no1975")
+```
+plotting objects and exporting
+```{r}
+tn_am
+tn_mbre
+tn_ms
+tn_mv
+tn_pbre
+tn_pbro
+tn_pc
+tn_pm
+tn_ps
+tn_pb
+tn_preg
+tn_pret
+
+
+#All taxa
+tn_no-2010=plot_python_trade_network_allsp(importer = "NO", min_year = 2010)
+tn_no-1975=plot_python_trade_network_allsp(importer = "NO", min_year = 1975)
 ```
 
