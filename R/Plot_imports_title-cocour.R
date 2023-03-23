@@ -28,10 +28,12 @@ Plot_imports_tc<-function(data,Species, fullTerms=FALSE, min_year=2009){
       dplyr::tally() |>
       ggplot2::ggplot(aes(Year, n, fill=Term))+
       ggplot2::geom_histogram(stat="identity")+
-      ggplot2::labs(y="The number of imports")+
+      ggplot2::labs(y="Number of imports")+
       viridis::scale_fill_viridis(discrete=T)+
+      #ggplot2::scale_fill_discrete(labels=c("Live", "Parts or\nproducts"))+
       ggplot2::theme_classic()+
-      ggplot2::ggtitle(paste0("Import data for ", Species))
+      ggplot2::ggtitle(paste0("Total imports"))
+      #ggplot2::ggtitle(paste0("Import data for ", Species))
 
 
   }else{
@@ -41,7 +43,8 @@ Plot_imports_tc<-function(data,Species, fullTerms=FALSE, min_year=2009){
       dplyr::tally() |>
       ggplot2::ggplot(aes(Year, n, fill=Term))+
       ggplot2::geom_histogram(stat="identity")+
-      ggplot2::labs(y="The number of imports")+
+      ggplot2::labs(y="Number of imports")+
+      #ggplot2::scale_fill_discrete(labels=c("Live", "Parts or\nproducts"))+
       viridis::scale_fill_viridis(discrete=T)+
       ggplot2::theme_classic()
   }

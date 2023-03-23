@@ -94,53 +94,69 @@ map_ps = map_GBIF_locs(Species = "Python sebae")
 
 saving the maps as pdfs and tiffs
 ```{r}
-ggsave("map_apodora_papuana.pdf", map_ap, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_apodora_papuana.tiff", map_ap, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_apodora_papuana.pdf", map_ap, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_apodora_papuana.tiff", map_ap, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_apodora_papuana.png", device="png",  map_ap, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_aspidites_melanocephalus.pdf", map_am, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_aspidites_melanocephalus.tiff", map_am, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_aspidites_melanocephalus.pdf", map_am, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_aspidites_melanocephalus.tiff", map_am, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_aspidites_melanocephalus.png", device="png",  map_am, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_liasis_mackloti.pdf", map_lm, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_liasis_mackloti.tiff", map_lm, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_liasis_mackloti.pdf", map_lm, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_liasis_mackloti.tiff", map_lm, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_liasis_mackloti.png", device="png",  map_lm, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_morelia_boeleni.pdf", map_mb, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_morelia_boeleni.tiff", map_mb, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_morelia_boeleni.pdf", map_mb, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_morelia_boeleni.tiff", map_mb, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_morelia_boeleni.png", device="png",  map_mb,  width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_morelia_bredli.pdf", map_nbre, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_morelia_bredli.tiff", map_nbre, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_morelia_bredli.pdf", map_nbre, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_morelia_bredli.tiff", map_nbre, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_morelia_bredli.png", device="png",  map_nbre, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_morelia_spilota.pdf", map_msp, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_morelia_spilota.tiff", map_msp, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_morelia_spilota.pdf", map_msp, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_morelia_spilota.tiff", map_msp, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_morelia_spilota.png", device="png",  map_msp, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_morelia_viridis.pdf", map_mv, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_morelia_viridis.tiff", map_mv, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_morelia_viridis.pdf", map_mv, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_morelia_viridis.tiff", map_mv, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_morelia_viridis.png", device="png",  map_mv, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_python_anchietae.pdf", map_på, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_python_anchietae.tiff", map_på, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_python_anchietae.pdf", map_på, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_python_anchietae.tiff", map_på, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_python_anchietae.png", device="png",  map_på, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_python_bivittatus.pdf", map_pb, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_python_bivittatus.tiff", map_pb, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_python_bivittatus.pdf", map_pb, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_python_bivittatus.tiff", map_pb, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_python_bivittatus.png", device="png",  map_pb, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_python_breitensteini.pdf", map_pbre, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_python_breitensteini.tiff", map_pbre, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_python_breitensteini.pdf", map_pbre, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_python_breitensteini.tiff", map_pbre, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_python_breitensteini.png", device="png", map_pbre, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_python_brongersmaii.pdf", map_pbro, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_python_brongersmai.tiff", map_pbro, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_python_brongersmaii.pdf", map_pbro, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_python_brongersmai.tiff", map_pbro, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_python_brongersmai.png", device="png",  map_pbro, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_python_curtus.pdf", map_pc, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_python_curtus.tiff", map_pc, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_python_curtus.pdf", map_pc, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_python_curtus.tiff", map_pc, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_python_curtus.png", device="png",  map_pc, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_python_molurus.pdf", map_pm, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_python_molurus.tiff", map_pm, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_python_molurus.pdf", map_pm, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_python_molurus.tiff", map_pm, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_python_molurus.png", device="png",  map_pm, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_python_regius.pdf", map_preg, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_python_regius.tiff", map_preg, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_python_regius.pdf", map_preg, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_python_regius.tiff", map_preg, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_python_regius.png", device="png",  map_preg, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_python_reticulatus.pdf", map_pret, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_python_reticulatus.tiff", map_pret, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_python_reticulatus.pdf", map_pret, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_python_reticulatus.tiff", map_pret, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_python_reticulatus.png", device="png",  map_pret, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
-ggsave("map_python_sebae.pdf", map_ps, width = 8, height = 8, units ="cm"  ) 
-ggsave("map_python_sebae.tiff", map_ps, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+#ggsave("map_python_sebae.pdf", map_ps, width = 8, height = 8, units ="cm"  ) 
+#ggsave("map_python_sebae.tiff", map_ps, width = 8, height = 8, units="cm", dpi=500, compression="lzw")
+ggsave(filename="map_python_sebae.png", device="png",  map_ps, width = 19.05, height = 22.23, dpi = 300, units="cm")
 
 
 #map_GBIF_locs(Species = "Python timoriensis")

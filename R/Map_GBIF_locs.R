@@ -19,7 +19,8 @@ map_GBIF_locs<-function(Species){
     ggplot2::theme(plot.margin=grid::unit(c(0,0,0,0), "mm")) +
     ggplot2::xlab('Longitude') +
     ggplot2::ylab('Latitude')+
-    ggplot2::ggtitle(paste0("Location records from GBIF for ", Species))
+    ggplot2::ggtitle(paste0("Location records"))
+#    ggplot2::ggtitle(paste0("Location records from GBIF for ", Species))
   return(p)
   }
 
