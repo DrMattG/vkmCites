@@ -207,7 +207,7 @@ visExport(tn_pbro, type="png", name = "tn_python_brongersmai")
 visExport(tn_pc, type="png", name = "tn_python_curtus")
 visExport(tn_pm, type="png", name = "tn_python_molurus" )
 visExport(tn_ps, type="png", name = "tn_python_sebae" )
-visExport(tn_pb, type="png", name = "tn_python_bivittatus" )
+visExport(tn_pb, type="png", name = "tn_python_bivittatus")
 visExport(tn_preg, type="png", name = "tn_python_regius" )
 visExport(tn_pret, type="png", name = "tn_python_reticulatus")
 

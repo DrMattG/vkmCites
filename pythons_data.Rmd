@@ -149,4 +149,16 @@ vkmCites::Pythons |>
 #### Issue 10: The following are examples of problematic categories: blank cells, frog leg, ivory carvings and unspecified. Should we mergethese into unspecified?
 
 
+##Fishing out python timoriensis data for comparison with CITES trade database
+```{r}
+pt <- vkmCites::Pythons |>
+  dplyr::filter(Year > 2009, Taxon =="Python timoriensis")
+summary(pt)
+write.csv(pt, "pt.csv", row.names=F)
+
+preti <- vkmCites::Pythons |>
+  dplyr::filter(Year > 2009, Taxon =="Python reticulatus")
+summary(preti)
+write.csv(preti, "preti.csv", row.names=F)
+```
 
